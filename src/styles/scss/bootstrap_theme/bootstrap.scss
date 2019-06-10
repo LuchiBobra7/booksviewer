@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Kurale');
+
+// Variable overrides
+$body-bg: #fff;
+$body-color: #393939;
+$primary: #00a1c7;
+$secondary:  #EEBCC7;
+$success: #488f31;
+$info: #c1e7ff;
+$warning: #ffa33e;
+$danger: #de425b;
+$dark: #2d3440;
+
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+
+$border-color: $gray-200;
+
+$container-max-widths: (
+  lg: 960px,
+  xl: 960px
+);
+
+$spacer: 1rem;
+$font-family-sans-serif: 'Open Sans', sans-serif;
+$font-size-base: .96rem;
+$font-size-lg:  $font-size-base * 1.35;
+
+
+// Buttons
+$input-btn-focus-width: 0;
+$input-btn-focus-color:  transparent;
+$input-btn-focus-box-shadow: 0 0 0 transparent;
+$btn-active-box-shadow: 0 0 0 transparent;
+$btn-font-weight: 600;
+
+// Cards
+$card-cap-bg: rgba(255, 255, 255, 0.92);
+$card-border-color: $gray-100;
+$card-bg: transparent;
+
+$navbar-padding-y:    $spacer / 4;
+
+
+// Bootstrap and its default variables
+@import "../../../../node_modules/bootstrap/scss/bootstrap";
+
+//@mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color)
+.btn-outline-light {
+   
+   @include button-outline-variant(#fff, #fff, rgba(255, 255, 255, .15),rgba(255, 255, 255, .8));
+}
+
+.btn-outline-light:active {
+    color: color-yiq(theme-color("dark")) !important; 
+}
