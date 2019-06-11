@@ -3,7 +3,7 @@ import { Container, Alert } from "reactstrap";
 import { getBooks } from "../../../api";
 import Context from "../../../Context";
 import Layout from "../../layout";
-import InfoBlock from "./banner";
+import Banner from "./banner";
 import BooksList from "./books/BooksList";
 import Features from "./feautures";
 
@@ -29,7 +29,7 @@ const BooksPage = () => {
 
   return (
     <Layout>
-      <InfoBlock />
+      <Banner />
       <Container className="py-4">
         <div className="card shadow-sm border-0 mb-4 books-card">
           <header className="card-header ">

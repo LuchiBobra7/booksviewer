@@ -3,7 +3,7 @@ import { Container } from "reactstrap";
 import Fade from "react-reveal/Fade";
 import { Link } from "react-router-dom";
 
-const InfoBlock = () => {
+const Banner = () => {
   return (
     <div className="info-block d-none d-lg-flex align-items-center bg-secondary text-white ">
       <Container className="">
@@ -23,4 +23,4 @@ const InfoBlock = () => {
   );
 };
 
-export default InfoBlock;
+export default Banner;
