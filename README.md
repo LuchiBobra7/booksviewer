@@ -1,8 +1,8 @@
-## Main Page
+### `Main Page`
 ![Screenshot](preview.jpg)
 
 
-## Book Page(preview.jpg)
+### `Inner Page`
 ![Screenshot](preview1.jpg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
