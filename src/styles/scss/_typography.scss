@@ -1,0 +1,31 @@
+.title,
+.navbar-brand {
+  font-family: "Kurale", serif;
+}
+
+h1, .h1 {
+    font-size: 2rem;
+    @media (min-width: 968px) {
+        font-size: 2.35rem;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: $dark;
+}
+
+.bg-dark *,
+.text-white * {
+  color: inherit;
+}

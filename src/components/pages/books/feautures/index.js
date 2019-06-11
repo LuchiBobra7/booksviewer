@@ -1,19 +1,21 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
 
 const feautures = [
-  { 
-    title: "find book", 
-    img: "books.svg" 
+  {
+    title: "find book",
+    img: "books.svg"
   },
   {
     title: "make tea",
-    img: "https://cdn0.iconfinder.com/data/icons/interior-and-decor-vol-1-1/512/13-256.png"
+    img:
+      "tea.svg"
   },
   {
     title: "forget about time",
-    img: "https://cdn0.iconfinder.com/data/icons/interior-and-decor-vol-1-1/512/14-256.png"
+    img:
+      "clock.svg"
   }
 ];
 
@@ -28,8 +30,8 @@ const Features = () => {
                 <img
                   alt={item.title}
                   className="mr-2"
-                  src={`${item.img}`}
-                  width="50"
+                  src={`/img/${item.img}`}
+                  width="56"
                 />
                 <div>
                   <h6 className="feauture-title text-uppercase">

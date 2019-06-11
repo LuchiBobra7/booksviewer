@@ -1,0 +1,15 @@
+.search {
+  &-form {
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    background: #fff;
+    border-bottom: 1px solid $border-color;
+    @media (min-width: 567px) {
+      position: relative;
+    }
+    .form-control {
+      font-size: 14px;
+    }
+  }
+}

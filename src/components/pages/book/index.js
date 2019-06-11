@@ -5,6 +5,7 @@ import Context from "../../../Context";
 import BookInfo from "./BookInfo";
 import BookSkeleton from "./BookSkeleton";
 import { getBook } from "../../../api";
+import PropTypes from "prop-types";
 
 const BookPage = (props, state) => {
   const { query } = useContext(Context);
@@ -47,6 +48,10 @@ const BookPage = (props, state) => {
       </Container>
     </Layout>
   );
+};
+
+BookPage.propTypes = {
+  book: PropTypes.arrayOf(PropTypes.shape(BookInfo.proptypes))
 };
 
 export default BookPage;

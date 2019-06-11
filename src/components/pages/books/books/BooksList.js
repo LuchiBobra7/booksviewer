@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
 import BookItem from "./BookItem";
 import BooksSkeleton from "./BooksSkeleton";
+import PropTypes from "prop-types";
 
-const BooksList = ({list,  isLoading }) => {
+const BooksList = ({ list, isLoading }) => {
   return (
     <Fragment>
       {!isLoading ? (
@@ -12,6 +13,10 @@ const BooksList = ({list,  isLoading }) => {
       )}
     </Fragment>
   );
+};
+
+BooksList.propTypes = {
+  item: PropTypes.arrayOf(PropTypes.shape(BookItem.proptypes))
 };
 
 export default BooksList;

@@ -28,31 +28,30 @@ const BooksPage = () => {
   }, [query]);
 
   return (
-    
-      <Layout>
-        <InfoBlock />
-        <Container className="py-4">
-          <div className="card shadow-sm border-0 mb-4">
-            <header className="card-header ">
-              <div className="card-title d-flex flex-wrap align-items-center mb-0">
-                <b className="text-muted">Results by query:</b>&nbsp;
-                <span className="h4 mb-0 selection title">{query}</span>
-              </div>
-            </header>
-            <div className="card-body">
-              {errorMessage ? (
-                <Alert color="danger">{errorMessage}</Alert>
-              ) : (
-                <div className="books-grid">
-                  <BooksList list={list} isLoading={isLoading}/>
-                </div>
-              )}
+    <Layout>
+      <InfoBlock />
+      <Container className="py-4">
+        <div className="card shadow-sm border-0 mb-4 books-card">
+          <header className="card-header ">
+            <div className="card-title d-flex flex-wrap align-items-center mb-0">
+              <b className="text-muted">Results by query:</b>&nbsp;
+              <span className="h4 mb-0 selection title">{query}</span>
             </div>
+          </header>
+          <div className="card-body">
+            {errorMessage ? (
+              <Alert color="danger">{errorMessage}</Alert>
+            ) : (
+              <div className="books-grid">
+                <BooksList list={list} isLoading={isLoading} />
+              </div>
+            )}
+            {!isLoading && !list && <h4>No results</h4>}
           </div>
-        </Container>
-        <Features />
-      </Layout>
-   
+        </div>
+      </Container>
+      <Features />
+    </Layout>
   );
 };
 

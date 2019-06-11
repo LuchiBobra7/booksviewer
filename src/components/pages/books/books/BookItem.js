@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SmoothImage from 'react-smooth-image';
+import { DEFAULT_IMG }  from '../../../../api'
+import PropTypes from 'prop-types';
 
 const BookItem = ({ item }) => {
   return (
@@ -9,9 +11,9 @@ const BookItem = ({ item }) => {
         <SmoothImage 
           src={item.volumeInfo.imageLinks 
             ? item.volumeInfo.imageLinks.thumbnail 
-            : 'no-image.png'}
-          alt="a nice image of mordor"
-          containerStyles={{paddingBottom: '144%'}}
+            : DEFAULT_IMG }
+          alt={item.volumeInfo.title}
+          containerStyles={{paddingBottom: '154%'}}
           imageStyles={{bottom: '0px', top: 'auto'}}
         />
       </Link>
@@ -21,5 +23,13 @@ const BookItem = ({ item }) => {
     </article>
   );
 };
+
+
+BookItem.propTypes = {
+  volumeInfo: PropTypes.shape({
+    imageLinks: PropTypes.object,
+    title: PropTypes.string
+  })
+}
 
 export default BookItem;

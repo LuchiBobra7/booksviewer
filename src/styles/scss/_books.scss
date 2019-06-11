@@ -1,0 +1,39 @@
+.book {
+  &s-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    grid-auto-flow: dense;
+    grid-auto-rows: auto;
+  }
+  &-img {
+    &-wrapper {
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    & {
+      position: absolute;
+      object-fit: contain;
+      bottom: 0;
+    }
+  }
+  &-title {
+    color: inherit;
+    font-size: 13px;
+    line-height: 1.1;
+    font-weight: 600;
+    text-align: center;
+    display: block;
+    height: 30px;
+    overflow: hidden;
+  }
+}
+
+/* Meta */
+.meta {
+    &-item {
+      margin: 3px 12px 3px 0;
+    }
+  }

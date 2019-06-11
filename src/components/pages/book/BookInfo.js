@@ -4,9 +4,9 @@ import SmoothImage from "react-smooth-image";
 import Parser from "html-react-parser";
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
-import Facebook from "react-sharingbuttons/dist/buttons/Facebook";
-import Twitter from "react-sharingbuttons/dist/buttons/Twitter";
-import "react-sharingbuttons/dist/main.css";
+import { DEFAULT_IMG } from "../../../api";
+import ShareButtons from "../../ui/ShareButtons";
+import PropTypes from "prop-types";
 
 const BookInfo = ({ book, isLoading }) => {
   const {
@@ -18,19 +18,18 @@ const BookInfo = ({ book, isLoading }) => {
     averageRating,
     description
   } = book.volumeInfo;
-  const {
-    webReaderLink
-  } = book.accessInfo;
+  const { webReaderLink } = book.accessInfo;
   return (
     <Row>
       <Col sm="5" lg="3" xl="4">
-        <div className="img-wrapper-lg">
-          <SmoothImage
-            src={imageLinks && imageLinks.medium ? imageLinks.medium : "/no_img.png"}
-            alt="a nice image of mordor"
-            containerStyles={{ paddingBottom: "150%" }}
-          />
-        </div>
+        <SmoothImage
+          transitionTime={0.1}
+          src={
+            imageLinks && imageLinks.medium ? imageLinks.medium : DEFAULT_IMG
+          }
+          alt="a nice image of mordor"
+          containerStyles={{ paddingBottom: "150%" }}
+        />
       </Col>
       <Col sm="7" lg="9" xl="8">
         <div>
@@ -56,11 +55,17 @@ const BookInfo = ({ book, isLoading }) => {
                   <span className="small text-muted">{publishedDate}</span>
                 </li>
               )}
-             
               {webReaderLink && (
                 <li className="meta-item d-flex align-items-center">
                   <i className="icons icon-eye mr-2" />
-                  <a className="small text-muted" href={webReaderLink} target="_blank" rel="noopener noreferrer">Read episode</a>
+                  <a
+                    className="small text-muted"
+                    href={webReaderLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Read episode
+                  </a>
                 </li>
               )}
             </ul>
@@ -68,14 +73,32 @@ const BookInfo = ({ book, isLoading }) => {
           <div className="mb-3">
             {book && description ? Parser(description) : ""}
           </div>
-          <div>
-            <Facebook url={book && previewLink} />
-            <Twitter url={book && previewLink} shareText="" />
-          </div>
+          <ShareButtons url={book && previewLink} />
         </div>
       </Col>
     </Row>
   );
+};
+
+BookInfo.propTypes = {
+  volumeInfo: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    imageLinks: PropTypes.shape({
+      smallThumbnail: PropTypes.string,
+      thumbnail: PropTypes.string,
+      small: PropTypes.string,
+      medium: PropTypes.string,
+      extraLarge: PropTypes.string
+    }),
+    authors: PropTypes.array,
+    previewLink: PropTypes.string,
+    publishedDate: PropTypes.string,
+    averageRating: PropTypes.number,
+    description: PropTypes.string
+  }),
+  accessInfo: PropTypes.shape({
+    webReaderLink: PropTypes.string
+  })
 };
 
 export default BookInfo;
