@@ -7185,7 +7185,7 @@ html {
   @media (min-width: 768px) {
     .banner {
       min-height: 30vh;
-      background: url("/img/bg.jpeg") 50% -50%/cover no-repeat;
+      background: url("/img/bg.jpeg") 50% 50%/cover no-repeat;
       background-attachment: fixed; } }
   @media (min-width: 768px) {
     .banner .container {
@@ -7208,20 +7208,19 @@ html {
 .books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 2fr));
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
   grid-auto-flow: dense;
-  grid-auto-rows: auto; }
+  align-items: end; }
 
 .book-img-wrapper {
   display: block;
   position: relative;
   overflow: hidden; }
-
-.book-img {
-  position: absolute;
-  object-fit: contain;
-  bottom: 0; }
+  .book-img-wrapper img {
+    display: block;
+    object-fit: contain;
+    width: 100%; }
 
 .book-title {
   color: inherit;
