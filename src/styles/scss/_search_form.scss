@@ -7,6 +7,8 @@
     border-bottom: 1px solid $border-color;
     @include media-breakpoint-up(sm) {
       position: relative;
+      left: 0;
+      right: 0;
     }
     .form-control {
       font-size: 14px;

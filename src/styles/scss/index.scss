@@ -1,5 +1,7 @@
 @import "bootstrap_theme/bootstrap.scss";
+
 $headerHeight: 54px;
+
 
 //Cursor pointer for all clicackable components
 a[href],
@@ -29,7 +31,7 @@ a[href]{
 @import "_layout";
 @import "_books_card";
 @import "_search_form";
-@import "_info_block";
+@import "_banner";
 @import "_books";
 @import "_feautures";
 @import "_sharing_buttons";

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
-    <div className="info-block d-none d-lg-flex align-items-center bg-secondary text-white ">
+    <div className="banner py-4 text-center text-md-left d-flex align-items-center bg-secondary text-white ">
       <Container className="">
         <Fade top delay={200}>
           <h2 className="title mb-4">

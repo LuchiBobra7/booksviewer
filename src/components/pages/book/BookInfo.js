@@ -23,11 +23,10 @@ const BookInfo = ({ book, isLoading }) => {
     <Row>
       <Col sm="5" lg="3" xl="4">
         <SmoothImage
-          transitionTime={0.1}
           src={
             imageLinks && imageLinks.medium ? imageLinks.medium : DEFAULT_IMG
           }
-          alt="a nice image of mordor"
+          alt={title}
           containerStyles={{ paddingBottom: "150%" }}
         />
       </Col>

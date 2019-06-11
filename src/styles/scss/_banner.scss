@@ -1,9 +1,18 @@
-.info-block {
+.banner {
   position: relative;
-  height: 30vh;
   overflow: hidden;
-  background: url("/img/bg.jpeg") 50% -50% no-repeat;
-  background-attachment: fixed;
+ 
+  @include media-breakpoint-up(md) {
+    min-height: 30vh;
+    
+    background: url("/img/bg.jpeg") 50% -50%/cover no-repeat;
+    background-attachment: fixed;
+  }
+  .container {
+    @include media-breakpoint-up(md) {
+      margin-top: -37px;
+    }
+  }
   &:before {
     position: absolute;
     content: "";
@@ -17,5 +26,8 @@
     font-weight: 600;
     letter-spacing: 0.5px;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.05);
+  }
+  .btn {
+    font-weight: 700;
   }
 }
