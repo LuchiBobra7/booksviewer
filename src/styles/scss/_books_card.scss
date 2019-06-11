@@ -1,6 +1,6 @@
 
 .books-card {
-  @media (min-width: 986px) {
+  @include media-breakpoint-up(lg) {
     margin-top: -74px;
   }
 }

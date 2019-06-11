@@ -5,7 +5,7 @@
     right: 15px;
     background: #fff;
     border-bottom: 1px solid $border-color;
-    @media (min-width: 567px) {
+    @include media-breakpoint-up(sm) {
       position: relative;
     }
     .form-control {
