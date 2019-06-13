@@ -33,7 +33,7 @@ const Features = () => {
                   src={`/img/${item.img}`}
                   width="56"
                 />
-                <div>
+                <section className="feature-item">
                   <h6 className="feauture-title text-uppercase">
                     {item.title}
                   </h6>
@@ -41,7 +41,7 @@ const Features = () => {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Recusandae cum, nostrum totam alias officia nobis
                   </small>
-                </div>
+                </section>
               </Fade>
             </Col>
           ))}

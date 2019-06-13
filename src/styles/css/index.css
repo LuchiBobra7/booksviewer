@@ -7239,7 +7239,13 @@ html {
 .feauture-title {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.4px; }
+  letter-spacing: .4px; }
+
+.feature-item {
+  margin-bottom: 20px; }
+  @media (min-width: 768px) {
+    .feature-item {
+      margin-bottom: 0; } }
 
 a[class*="react-sharing-button"] {
   color: #fff;

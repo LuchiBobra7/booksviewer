@@ -2,5 +2,12 @@
 .feauture-title {
   font-size: 14px;
   font-weight: 600;
-  letter-spacing: 0.4px;
+  letter-spacing: .4px;
+}
+
+.feature-item {
+  margin-bottom: 20px;
+  @include media-breakpoint-up(md)  {
+    margin-bottom: 0;
+  }
 }
